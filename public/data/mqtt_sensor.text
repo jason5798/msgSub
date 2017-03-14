@@ -1,0 +1,19 @@
+Host Name 52.193.146.103
+Port Number 80
+Topic client/200000109/200000109-GIOT-MAKER
+Client ID 200000109-generic-service
+User Name 200000109
+Password 57381042
+
+數據格式如下:
+
+起始符號(1 byte)  0xAA
+裝置類型(1 byte)   0x10
+數據識別碼(1 byte)  0x00~0xFF
+感測數據(13 bytes)  pH+溶氧量+電導度+溫度+濁度+電池電壓
+pH：2 bytes (0~14PH)
+溶氧量：2 bytes (0~20mg/L)
+電導度：3 bytes (0~80ms/cm)
+溫度：2 byte (0~100NTU)
+濁度：2 bytes (0~80°C)
+電池電壓：2 bytes (0~1023)
