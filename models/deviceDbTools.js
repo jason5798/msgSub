@@ -16,7 +16,8 @@ exports.saveDeviceMsg = function (obj,callback) {
         date        : obj.date,
         timestamp   : obj.timestamp,
         extra       : obj.extra,
-        info        : obj.information
+        info        : obj.information,
+        type        : obj.type
     });
 
     //console.log('$$$$ DeviceModel : '+JSON.stringify(newDevice));

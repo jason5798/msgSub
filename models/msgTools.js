@@ -2,6 +2,7 @@ var moment = require('moment');
 var ParseDefine =  require('./parseDefine.js');
 var JsonFileTools =  require('./jsonFileTools.js');
 var listDbTools =  require('./listDbTools.js');
+var settings = require('../settings');
 var mData,mMac,mRecv,mDate,mTimestamp,mType,mExtra ;
 var obj;
 var path = './public/data/finalList.json';
@@ -41,7 +42,9 @@ exports.parseMsg = function (msg) {
     }
     //Get data attributes
     mData = obj.data;
-    mType = mData.substring(0,4);
+    if(settings.co == 'gemteks'){
+        mType = mData.substring(0,4);
+    }
     mMac  = obj.macAddr;
     mDate = moment(mRecv).format('YYYY/MM/DD HH:mm:ss');
     mExtra = obj.extra;
@@ -62,7 +65,9 @@ exports.parseMsg = function (msg) {
         mInfo = parseDefineMessage(mData,mType);
 
     var msg = {mac:mMac,data:mData,recv:mRecv,date:mDate,extra:mExtra,timestamp:mTimestamp};
-    
+    if(settings.co == 'gemteks'){
+        msg.type = mType;
+    }
     finalList[mMac]=msg;
     
     

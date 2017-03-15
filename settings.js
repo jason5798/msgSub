@@ -1,8 +1,9 @@
 module.exports = {
   cookieSecret: 'mydemo',
-  db: 'demo',
-  host: 'localhost',
-  port: 27017,
+  co:'gemteks',
+  dbhost: 'localhost',
+  dbport: 27017,
+  dbpath: 'mongodb://localhost/gemteks',
   myport: 1884,
   mytopic:'mqtt',
   gIotHost:'52.193.146.103',
@@ -10,5 +11,8 @@ module.exports = {
   client_Id: '200000206-generic-service',
   name: '200000206',
   pw: '02259101',
-  gIoTopic:'client/200000206/200000206-GIOT-MAKER'
+  gIoTopic:'client/200000206/200000206-GIOT-MAKER',
+  hour : 60*60*1000,
+  isNeedGWMac: true,
+  isNeedTypeSwitch: false,
 };

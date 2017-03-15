@@ -10,7 +10,8 @@ var deviceSchema = new Schema({
   date: { type: String},
   timestamp:{type: Number},
   extra: { type: Schema.Types.Mixed},
-  info: { type: Schema.Types.Mixed}
+  info: { type: Schema.Types.Mixed},
+  type: { type: String}
 });
 
 // the schema is useless so far
